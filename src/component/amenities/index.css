@@ -1,0 +1,39 @@
+.amenities {
+    display: flex;
+    flex-direction:column;
+    gap: 24px;
+}
+
+.amenities__header { 
+    display: flex;
+    gap: 12px;
+}
+
+.amenities__list {
+    display: grid;
+    gap: 12px;
+}
+
+.amenities__list-item {
+    border-bottom: 1px solid #dee2e6;
+    padding-bottom: 8px;
+    font-size: 16px;
+    
+}
+.amenities_no{
+color: #000;
+opacity: 0.2;
+font-size: 16px;
+font-weight: 400;
+
+}
+.amenities_yes{
+color: #000;
+font-size: 16px;
+font-weight: 400;
+gap: 10px;
+
+}
+.list-item__block {
+    gap: 0px;
+}

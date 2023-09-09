@@ -1,3 +1,17 @@
+import Page from "./component/page";
+import Header from "./component/header";
+import Title from "./component/title";
+import Photo from "./component/photo";
+import Price from "./component/price";
+import RoomList from "./component/room-list";
+import Description from "./component/description";
+import Property from "./component/property"
+import Amenities from "./component/amenities"
+import PropertyAdd from "./component/property-add"
+
+
+
+
 function App() {
   const data = {
     listing_name: "Іст-Сайд Біл",
@@ -92,7 +106,7 @@ function App() {
         "Public buses and taxis available within walking distance.",
       host_languages: ["English", "Spanish"],
       special_offers: "10% discount for bookings of 7 nights or more.",
-      "check-in_instructions":
+      check_in_instructions:
         "Check-in time is 3:00 PM. Please contact us in advance with your estimated arrival time.",
     },
 
@@ -144,7 +158,56 @@ function App() {
     ],
   };
 
-  return <div>Hello World</div>;
+  return (
+  <Page>
+    <Header/>
+    <Title
+      title={data.listing_name}
+      rating={data.reviews_summary.average_rating}
+      review={data.reviews_summary.total_reviews}
+      city={data.location.city}
+      country={data.location.country}
+      superhost={data.superhost}
+     />
+     <Photo src={data.image} name={data.listing_name} />
+     <Price
+        price={data.price.original_price}
+        discount={data.price.discounted_price}
+        currency={data.price.currency}
+        cleaning={data.price.cleaning_fee}
+        service={data.price.service_fee}
+        checkin={data.availability.checkin_date}
+        checkout={data.availability.checkout_date}
+     />
+     <RoomList list={data.roomTypes}/>
+     <Description title="Опис" children={data.description} />
+
+     {/* Detali vlastyvosti */}
+<Property
+
+        guests={data.property_details.guests}
+        bedrooms={data.property_details.bedrooms}
+        beds={data.property_details.beds}
+        baths={data.property_details.baths}
+       
+     />
+     <Description title="Про сусідів" children={data.neighborhood_info} />
+
+     {/* зручності */}
+     <Amenities amenities={data.amenities} />
+
+     <PropertyAdd
+
+        additional_properties={data.additional_properties}
+        
+       
+     />
+
+
+
+
+    </Page>
+   );
 }
 
 export default App;
