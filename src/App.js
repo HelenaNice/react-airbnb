@@ -8,6 +8,11 @@ import Description from "./component/description";
 import Property from "./component/property"
 import Amenities from "./component/amenities"
 import PropertyAdd from "./component/property-add"
+import ReviewList from "./component/review-list";
+import NearbyAttractions from "./component/nearbyAttractions";
+import ContactInfo from "./component/contact-info";
+
+
 
 
 
@@ -193,15 +198,22 @@ function App() {
      />
      <Description title="Про сусідів" children={data.neighborhood_info} />
 
-     {/* зручності */}
      <Amenities amenities={data.amenities} />
 
-     <PropertyAdd
+      <ContactInfo
+        name={data.contact_info.name}
+        image={data.contact_info.image}
+        response_rate={data.contact_info.response_rate}
+        response_time={data.contact_info.response_time}
+        info={data.contact_info.info}
+        phone={data.contact_info.phone}
+      />
 
-        additional_properties={data.additional_properties}
-        
-       
-     />
+     <PropertyAdd additional_properties={data.additional_properties}/>
+
+     <ReviewList list={data.guestReviews}/>
+
+     <NearbyAttractions attractions={data.nearbyAttractions} />
 
 
 

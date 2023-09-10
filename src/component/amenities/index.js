@@ -20,7 +20,7 @@ const amenityTranslations = {
 export default function Amenities({ amenities }) {
   return (
     <Box className="amenities">
-      <div className="amenities__header">
+      <div className="amenities__header heading--border">
         <Heading>Зручності</Heading>
       </div>
       <ul className="amenities__list">

@@ -16,7 +16,7 @@ export default function Property( { guests, bedrooms, beds, baths
  
     return (
         <Box className="property">
-            <div className="property__header">
+            <div className="property__header heading--border">
                <Heading>Деталі властивості</Heading>
                     </div>
 {/* <img height="24" width="24" src={require("./guests.svg").default} alt="Icon" /> */}

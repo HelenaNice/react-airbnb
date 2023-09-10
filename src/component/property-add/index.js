@@ -19,9 +19,9 @@ export default function PropertyAdd( {additional_properties}) {
  
     return (
         <Box className="property-add">
-            <div className="property-add__header">
+            <div className="property-add__header heading--border">
                <Heading>Додадкові властивості</Heading>
-                    </div>
+             </div>
            <List additional_properties={additional_properties} translations={propertyTranslations} />
         </Box>
     );
